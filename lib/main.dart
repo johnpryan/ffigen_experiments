@@ -4,15 +4,23 @@ import 'package:objective_c/objective_c.dart';
 
 import 'package:flutter/material.dart';
 
-const _dylibPath =
+const _avfAudioDylibPath =
     '/System/Library/Frameworks/AVFAudio.framework/Versions/Current/AVFAudio';
+const _foundationDylibPath =
+    '/System/Library/Frameworks/Foundation.framework/Foundation';
 
 void main() async {
-  var args = ['test.mp3'];
-  DynamicLibrary.open(_dylibPath);
+  var args = ['assets/test.mp3'];
+  DynamicLibrary.open(_avfAudioDylibPath);
+  DynamicLibrary.open(_foundationDylibPath);
+  final bundle = NSBundle.getMainBundle();
+
+  final resourcePath = bundle.resourcePath;
+  print('resourcePath = ${resourcePath!.toDartString()}');
+
   for (final file in args) {
-    final fileStr = NSString(file);
-    print('Loading $fileStr');
+    final fileStr = NSString('${resourcePath.toDartString()}/flutter_assets/test.mp3');
+    print('Loading ${fileStr.toDartString()}');
     final fileUrl = NSURL.fileURLWithPath(fileStr);
     final player = AVAudioPlayer.alloc().initWithContentsOfURL(
       fileUrl,

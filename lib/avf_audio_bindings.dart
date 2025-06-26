@@ -19,6 +19,1153 @@ external ffi.Pointer<objc.ObjCObject> _AVFAudio_protocolTrampoline_1mbt9g9(
   ffi.Pointer<ffi.Void> arg0,
 );
 
+late final _class_NSBundle = objc.getClass("NSBundle");
+late final _sel_isKindOfClass_ = objc.registerName("isKindOfClass:");
+final _objc_msgSend_19nvye5 = objc.msgSendPointer
+    .cast<
+        ffi.NativeFunction<
+            ffi.Bool Function(
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCSelector>,
+                ffi.Pointer<objc.ObjCObject>)>>()
+    .asFunction<
+        bool Function(ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCSelector>, ffi.Pointer<objc.ObjCObject>)>();
+late final _sel_setPreservationPriority_forTags_ =
+    objc.registerName("setPreservationPriority:forTags:");
+final _objc_msgSend_130mcug = objc.msgSendPointer
+    .cast<
+        ffi.NativeFunction<
+            ffi.Void Function(
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCSelector>,
+                ffi.Double,
+                ffi.Pointer<objc.ObjCObject>)>>()
+    .asFunction<
+        void Function(
+            ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCSelector>,
+            double,
+            ffi.Pointer<objc.ObjCObject>)>();
+late final _sel_preservationPriorityForTag_ =
+    objc.registerName("preservationPriorityForTag:");
+final _objc_msgSend_mabicu = objc.msgSendPointer
+    .cast<
+        ffi.NativeFunction<
+            ffi.Double Function(
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCSelector>,
+                ffi.Pointer<objc.ObjCObject>)>>()
+    .asFunction<
+        double Function(ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCSelector>, ffi.Pointer<objc.ObjCObject>)>();
+final _objc_msgSend_mabicuFpret = objc.msgSendFpretPointer
+    .cast<
+        ffi.NativeFunction<
+            ffi.Double Function(
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCSelector>,
+                ffi.Pointer<objc.ObjCObject>)>>()
+    .asFunction<
+        double Function(ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCSelector>, ffi.Pointer<objc.ObjCObject>)>();
+
+/// NSBundleResourceRequestAdditions
+extension NSBundleResourceRequestAdditions on NSBundle {
+  /// setPreservationPriority:forTags:
+  void setPreservationPriority(double priority, {required objc.NSSet forTags}) {
+    objc.checkOsVersionInternal('NSBundle.setPreservationPriority:forTags:',
+        iOS: (false, (9, 0, 0)), macOS: (true, null));
+    _objc_msgSend_130mcug(this.ref.pointer,
+        _sel_setPreservationPriority_forTags_, priority, forTags.ref.pointer);
+  }
+
+  /// preservationPriorityForTag:
+  double preservationPriorityForTag(objc.NSString tag) {
+    objc.checkOsVersionInternal('NSBundle.preservationPriorityForTag:',
+        iOS: (false, (9, 0, 0)), macOS: (true, null));
+    return objc.useMsgSendVariants
+        ? _objc_msgSend_mabicuFpret(
+            this.ref.pointer, _sel_preservationPriorityForTag_, tag.ref.pointer)
+        : _objc_msgSend_mabicu(this.ref.pointer,
+            _sel_preservationPriorityForTag_, tag.ref.pointer);
+  }
+}
+
+late final _sel_mainBundle = objc.registerName("mainBundle");
+final _objc_msgSend_151sglz = objc.msgSendPointer
+    .cast<
+        ffi.NativeFunction<
+            ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCSelector>)>>()
+    .asFunction<
+        ffi.Pointer<objc.ObjCObject> Function(
+            ffi.Pointer<objc.ObjCObject>, ffi.Pointer<objc.ObjCSelector>)>();
+typedef instancetype = ffi.Pointer<objc.ObjCObject>;
+typedef Dartinstancetype = objc.ObjCObjectBase;
+late final _sel_bundleWithPath_ = objc.registerName("bundleWithPath:");
+final _objc_msgSend_1sotr3r = objc.msgSendPointer
+    .cast<
+        ffi.NativeFunction<
+            ffi.Pointer<objc.ObjCObject> Function(
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCSelector>,
+                ffi.Pointer<objc.ObjCObject>)>>()
+    .asFunction<
+        ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCSelector>, ffi.Pointer<objc.ObjCObject>)>();
+late final _sel_initWithPath_ = objc.registerName("initWithPath:");
+late final _sel_bundleWithURL_ = objc.registerName("bundleWithURL:");
+late final _sel_initWithURL_ = objc.registerName("initWithURL:");
+late final _sel_bundleForClass_ = objc.registerName("bundleForClass:");
+late final _sel_bundleWithIdentifier_ =
+    objc.registerName("bundleWithIdentifier:");
+late final _sel_allBundles = objc.registerName("allBundles");
+late final _sel_allFrameworks = objc.registerName("allFrameworks");
+late final _sel_load = objc.registerName("load");
+final _objc_msgSend_91o635 = objc.msgSendPointer
+    .cast<
+        ffi.NativeFunction<
+            ffi.Bool Function(ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCSelector>)>>()
+    .asFunction<
+        bool Function(
+            ffi.Pointer<objc.ObjCObject>, ffi.Pointer<objc.ObjCSelector>)>();
+late final _sel_isLoaded = objc.registerName("isLoaded");
+late final _sel_unload = objc.registerName("unload");
+late final _sel_preflightAndReturnError_ =
+    objc.registerName("preflightAndReturnError:");
+final _objc_msgSend_1dom33q = objc.msgSendPointer
+    .cast<
+        ffi.NativeFunction<
+            ffi.Bool Function(
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCSelector>,
+                ffi.Pointer<ffi.Pointer<objc.ObjCObject>>)>>()
+    .asFunction<
+        bool Function(
+            ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCSelector>,
+            ffi.Pointer<ffi.Pointer<objc.ObjCObject>>)>();
+late final _sel_loadAndReturnError_ = objc.registerName("loadAndReturnError:");
+late final _sel_bundleURL = objc.registerName("bundleURL");
+late final _sel_resourceURL = objc.registerName("resourceURL");
+late final _sel_executableURL = objc.registerName("executableURL");
+late final _sel_URLForAuxiliaryExecutable_ =
+    objc.registerName("URLForAuxiliaryExecutable:");
+late final _sel_privateFrameworksURL =
+    objc.registerName("privateFrameworksURL");
+late final _sel_sharedFrameworksURL = objc.registerName("sharedFrameworksURL");
+late final _sel_sharedSupportURL = objc.registerName("sharedSupportURL");
+late final _sel_builtInPlugInsURL = objc.registerName("builtInPlugInsURL");
+late final _sel_appStoreReceiptURL = objc.registerName("appStoreReceiptURL");
+late final _sel_bundlePath = objc.registerName("bundlePath");
+late final _sel_resourcePath = objc.registerName("resourcePath");
+late final _sel_executablePath = objc.registerName("executablePath");
+late final _sel_pathForAuxiliaryExecutable_ =
+    objc.registerName("pathForAuxiliaryExecutable:");
+late final _sel_privateFrameworksPath =
+    objc.registerName("privateFrameworksPath");
+late final _sel_sharedFrameworksPath =
+    objc.registerName("sharedFrameworksPath");
+late final _sel_sharedSupportPath = objc.registerName("sharedSupportPath");
+late final _sel_builtInPlugInsPath = objc.registerName("builtInPlugInsPath");
+late final _sel_URLForResource_withExtension_subdirectory_inBundleWithURL_ =
+    objc.registerName(
+        "URLForResource:withExtension:subdirectory:inBundleWithURL:");
+final _objc_msgSend_s92gih = objc.msgSendPointer
+    .cast<
+        ffi.NativeFunction<
+            ffi.Pointer<objc.ObjCObject> Function(
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCSelector>,
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCObject>)>>()
+    .asFunction<
+        ffi.Pointer<objc.ObjCObject> Function(
+            ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCSelector>,
+            ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCObject>)>();
+late final _sel_URLsForResourcesWithExtension_subdirectory_inBundleWithURL_ =
+    objc.registerName(
+        "URLsForResourcesWithExtension:subdirectory:inBundleWithURL:");
+final _objc_msgSend_11spmsz = objc.msgSendPointer
+    .cast<
+        ffi.NativeFunction<
+            ffi.Pointer<objc.ObjCObject> Function(
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCSelector>,
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCObject>)>>()
+    .asFunction<
+        ffi.Pointer<objc.ObjCObject> Function(
+            ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCSelector>,
+            ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCObject>)>();
+late final _sel_URLForResource_withExtension_ =
+    objc.registerName("URLForResource:withExtension:");
+final _objc_msgSend_15qeuct = objc.msgSendPointer
+    .cast<
+        ffi.NativeFunction<
+            ffi.Pointer<objc.ObjCObject> Function(
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCSelector>,
+                ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCObject>)>>()
+    .asFunction<
+        ffi.Pointer<objc.ObjCObject> Function(
+            ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCSelector>,
+            ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCObject>)>();
+late final _sel_URLForResource_withExtension_subdirectory_ =
+    objc.registerName("URLForResource:withExtension:subdirectory:");
+late final _sel_URLForResource_withExtension_subdirectory_localization_ = objc
+    .registerName("URLForResource:withExtension:subdirectory:localization:");
+late final _sel_URLsForResourcesWithExtension_subdirectory_ =
+    objc.registerName("URLsForResourcesWithExtension:subdirectory:");
+late final _sel_URLsForResourcesWithExtension_subdirectory_localization_ = objc
+    .registerName("URLsForResourcesWithExtension:subdirectory:localization:");
+late final _sel_pathForResource_ofType_inDirectory_ =
+    objc.registerName("pathForResource:ofType:inDirectory:");
+late final _sel_pathsForResourcesOfType_inDirectory_ =
+    objc.registerName("pathsForResourcesOfType:inDirectory:");
+late final _sel_pathForResource_ofType_ =
+    objc.registerName("pathForResource:ofType:");
+late final _sel_pathForResource_ofType_inDirectory_forLocalization_ =
+    objc.registerName("pathForResource:ofType:inDirectory:forLocalization:");
+late final _sel_pathsForResourcesOfType_inDirectory_forLocalization_ =
+    objc.registerName("pathsForResourcesOfType:inDirectory:forLocalization:");
+late final _sel_localizedStringForKey_value_table_ =
+    objc.registerName("localizedStringForKey:value:table:");
+
+/// WARNING: NSAttributedString is a stub. To generate bindings for this class, include
+/// NSAttributedString in your config's objc-interfaces list.
+///
+/// NSAttributedString
+class NSAttributedString extends objc.NSObject
+    implements objc.NSCopying, objc.NSMutableCopying, objc.NSSecureCoding {
+  NSAttributedString._(ffi.Pointer<objc.ObjCObject> pointer,
+      {bool retain = false, bool release = false})
+      : super.castFromPointer(pointer, retain: retain, release: release) {
+    objc.checkOsVersionInternal('NSAttributedString',
+        iOS: (false, (3, 2, 0)), macOS: (false, (10, 0, 0)));
+  }
+
+  /// Constructs a [NSAttributedString] that points to the same underlying object as [other].
+  NSAttributedString.castFrom(objc.ObjCObjectBase other)
+      : this._(other.ref.pointer, retain: true, release: true);
+
+  /// Constructs a [NSAttributedString] that wraps the given raw object pointer.
+  NSAttributedString.castFromPointer(ffi.Pointer<objc.ObjCObject> other,
+      {bool retain = false, bool release = false})
+      : this._(other, retain: retain, release: release);
+}
+
+late final _sel_localizedAttributedStringForKey_value_table_ =
+    objc.registerName("localizedAttributedStringForKey:value:table:");
+late final _sel_bundleIdentifier = objc.registerName("bundleIdentifier");
+late final _sel_infoDictionary = objc.registerName("infoDictionary");
+late final _sel_localizedInfoDictionary =
+    objc.registerName("localizedInfoDictionary");
+late final _sel_objectForInfoDictionaryKey_ =
+    objc.registerName("objectForInfoDictionaryKey:");
+late final _sel_classNamed_ = objc.registerName("classNamed:");
+late final _sel_principalClass = objc.registerName("principalClass");
+late final _sel_preferredLocalizations =
+    objc.registerName("preferredLocalizations");
+late final _sel_localizations = objc.registerName("localizations");
+late final _sel_developmentLocalization =
+    objc.registerName("developmentLocalization");
+late final _sel_preferredLocalizationsFromArray_ =
+    objc.registerName("preferredLocalizationsFromArray:");
+late final _sel_preferredLocalizationsFromArray_forPreferences_ =
+    objc.registerName("preferredLocalizationsFromArray:forPreferences:");
+late final _sel_executableArchitectures =
+    objc.registerName("executableArchitectures");
+late final _sel_init = objc.registerName("init");
+late final _sel_new = objc.registerName("new");
+late final _sel_allocWithZone_ = objc.registerName("allocWithZone:");
+final _objc_msgSend_1cwp428 = objc.msgSendPointer
+    .cast<
+        ffi.NativeFunction<
+            ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCObject>,
+                ffi.Pointer<objc.ObjCSelector>, ffi.Pointer<objc.NSZone>)>>()
+    .asFunction<
+        ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCObject>,
+            ffi.Pointer<objc.ObjCSelector>, ffi.Pointer<objc.NSZone>)>();
+late final _sel_alloc = objc.registerName("alloc");
+late final _sel_self = objc.registerName("self");
+ffi.Pointer<objc.ObjCObject> _ObjCBlock_objcObjCObject_ffiVoid_fnPtrTrampoline(
+        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
+    block.ref.target
+        .cast<
+            ffi.NativeFunction<
+                ffi.Pointer<objc.ObjCObject> Function(
+                    ffi.Pointer<ffi.Void> arg0)>>()
+        .asFunction<
+            ffi.Pointer<objc.ObjCObject> Function(
+                ffi.Pointer<ffi.Void>)>()(arg0);
+ffi.Pointer<ffi.Void> _ObjCBlock_objcObjCObject_ffiVoid_fnPtrCallable =
+    ffi.Pointer.fromFunction<
+                ffi.Pointer<objc.ObjCObject> Function(
+                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
+            _ObjCBlock_objcObjCObject_ffiVoid_fnPtrTrampoline)
+        .cast();
+ffi.Pointer<objc.ObjCObject>
+    _ObjCBlock_objcObjCObject_ffiVoid_closureTrampoline(
+            ffi.Pointer<objc.ObjCBlockImpl> block,
+            ffi.Pointer<ffi.Void> arg0) =>
+        (objc.getBlockClosure(block) as ffi.Pointer<objc.ObjCObject> Function(
+            ffi.Pointer<ffi.Void>))(arg0);
+ffi.Pointer<ffi.Void> _ObjCBlock_objcObjCObject_ffiVoid_closureCallable =
+    ffi.Pointer.fromFunction<
+                ffi.Pointer<objc.ObjCObject> Function(
+                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
+            _ObjCBlock_objcObjCObject_ffiVoid_closureTrampoline)
+        .cast();
+
+/// Construction methods for `objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>`.
+abstract final class ObjCBlock_objcObjCObject_ffiVoid {
+  /// Returns a block that wraps the given raw block pointer.
+  static objc
+      .ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>
+      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
+              {bool retain = false, bool release = false}) =>
+          objc.ObjCBlock<
+                  ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>(
+              pointer,
+              retain: retain,
+              release: release);
+
+  /// Creates a block from a C function pointer.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  static objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>
+      fromFunctionPointer(
+              ffi.Pointer<
+                      ffi.NativeFunction<
+                          ffi.Pointer<objc.ObjCObject> Function(
+                              ffi.Pointer<ffi.Void> arg0)>>
+                  ptr) =>
+          objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>(
+              objc.newPointerBlock(_ObjCBlock_objcObjCObject_ffiVoid_fnPtrCallable, ptr.cast()),
+              retain: false,
+              release: true);
+
+  /// Creates a block from a Dart function.
+  ///
+  /// This block must be invoked by native code running on the same thread as
+  /// the isolate that registered it. Invoking the block on the wrong thread
+  /// will result in a crash.
+  ///
+  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
+  /// until it is garbage collected by both Dart and ObjC.
+  static objc
+      .ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>
+      fromFunction(objc.ObjCObjectBase Function(ffi.Pointer<ffi.Void>) fn,
+              {bool keepIsolateAlive = true}) =>
+          objc.ObjCBlock<
+                  ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>(
+              objc.newClosureBlock(
+                  _ObjCBlock_objcObjCObject_ffiVoid_closureCallable,
+                  (ffi.Pointer<ffi.Void> arg0) =>
+                      fn(arg0).ref.retainAndAutorelease(),
+                  keepIsolateAlive),
+              retain: false,
+              release: true);
+}
+
+/// Call operator for `objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>`.
+extension ObjCBlock_objcObjCObject_ffiVoid_CallExtension on objc
+    .ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)> {
+  objc.ObjCObjectBase call(ffi.Pointer<ffi.Void> arg0) => objc.ObjCObjectBase(
+      ref.pointer.ref.invoke
+          .cast<
+              ffi.NativeFunction<
+                  ffi.Pointer<objc.ObjCObject> Function(
+                      ffi.Pointer<objc.ObjCBlockImpl> block,
+                      ffi.Pointer<ffi.Void> arg0)>>()
+          .asFunction<
+              ffi.Pointer<objc.ObjCObject> Function(
+                  ffi.Pointer<objc.ObjCBlockImpl>,
+                  ffi.Pointer<ffi.Void>)>()(ref.pointer, arg0),
+      retain: true,
+      release: true);
+}
+
+late final _sel_retain = objc.registerName("retain");
+late final _sel_autorelease = objc.registerName("autorelease");
+
+/// NSBundle
+class NSBundle extends objc.NSObject {
+  NSBundle._(ffi.Pointer<objc.ObjCObject> pointer,
+      {bool retain = false, bool release = false})
+      : super.castFromPointer(pointer, retain: retain, release: release);
+
+  /// Constructs a [NSBundle] that points to the same underlying object as [other].
+  NSBundle.castFrom(objc.ObjCObjectBase other)
+      : this._(other.ref.pointer, retain: true, release: true);
+
+  /// Constructs a [NSBundle] that wraps the given raw object pointer.
+  NSBundle.castFromPointer(ffi.Pointer<objc.ObjCObject> other,
+      {bool retain = false, bool release = false})
+      : this._(other, retain: retain, release: release);
+
+  /// Returns whether [obj] is an instance of [NSBundle].
+  static bool isInstance(objc.ObjCObjectBase obj) {
+    return _objc_msgSend_19nvye5(
+        obj.ref.pointer, _sel_isKindOfClass_, _class_NSBundle);
+  }
+
+  /// mainBundle
+  static NSBundle getMainBundle() {
+    final _ret = _objc_msgSend_151sglz(_class_NSBundle, _sel_mainBundle);
+    return NSBundle.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// bundleWithPath:
+  static NSBundle? bundleWithPath(objc.NSString path) {
+    final _ret = _objc_msgSend_1sotr3r(
+        _class_NSBundle, _sel_bundleWithPath_, path.ref.pointer);
+    return _ret.address == 0
+        ? null
+        : NSBundle.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// initWithPath:
+  NSBundle? initWithPath(objc.NSString path) {
+    final _ret = _objc_msgSend_1sotr3r(this.ref.retainAndReturnPointer(),
+        _sel_initWithPath_, path.ref.pointer);
+    return _ret.address == 0
+        ? null
+        : NSBundle.castFromPointer(_ret, retain: false, release: true);
+  }
+
+  /// bundleWithURL:
+  static NSBundle? bundleWithURL(objc.NSURL url) {
+    objc.checkOsVersionInternal('NSBundle.bundleWithURL:',
+        iOS: (false, (4, 0, 0)), macOS: (false, (10, 6, 0)));
+    final _ret = _objc_msgSend_1sotr3r(
+        _class_NSBundle, _sel_bundleWithURL_, url.ref.pointer);
+    return _ret.address == 0
+        ? null
+        : NSBundle.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// initWithURL:
+  NSBundle? initWithURL(objc.NSURL url) {
+    objc.checkOsVersionInternal('NSBundle.initWithURL:',
+        iOS: (false, (4, 0, 0)), macOS: (false, (10, 6, 0)));
+    final _ret = _objc_msgSend_1sotr3r(
+        this.ref.retainAndReturnPointer(), _sel_initWithURL_, url.ref.pointer);
+    return _ret.address == 0
+        ? null
+        : NSBundle.castFromPointer(_ret, retain: false, release: true);
+  }
+
+  /// bundleForClass:
+  static NSBundle bundleForClass(objc.ObjCObjectBase aClass) {
+    final _ret = _objc_msgSend_1sotr3r(
+        _class_NSBundle, _sel_bundleForClass_, aClass.ref.pointer);
+    return NSBundle.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// bundleWithIdentifier:
+  static NSBundle? bundleWithIdentifier(objc.NSString identifier) {
+    final _ret = _objc_msgSend_1sotr3r(
+        _class_NSBundle, _sel_bundleWithIdentifier_, identifier.ref.pointer);
+    return _ret.address == 0
+        ? null
+        : NSBundle.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// allBundles
+  static objc.NSArray getAllBundles() {
+    final _ret = _objc_msgSend_151sglz(_class_NSBundle, _sel_allBundles);
+    return objc.NSArray.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// allFrameworks
+  static objc.NSArray getAllFrameworks() {
+    final _ret = _objc_msgSend_151sglz(_class_NSBundle, _sel_allFrameworks);
+    return objc.NSArray.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// load
+  bool load() {
+    return _objc_msgSend_91o635(this.ref.pointer, _sel_load);
+  }
+
+  /// isLoaded
+  bool get loaded {
+    return _objc_msgSend_91o635(this.ref.pointer, _sel_isLoaded);
+  }
+
+  /// unload
+  bool unload() {
+    return _objc_msgSend_91o635(this.ref.pointer, _sel_unload);
+  }
+
+  /// preflightAndReturnError:
+  bool preflightAndReturnError(
+      ffi.Pointer<ffi.Pointer<objc.ObjCObject>> error) {
+    objc.checkOsVersionInternal('NSBundle.preflightAndReturnError:',
+        iOS: (false, (2, 0, 0)), macOS: (false, (10, 5, 0)));
+    return _objc_msgSend_1dom33q(
+        this.ref.pointer, _sel_preflightAndReturnError_, error);
+  }
+
+  /// loadAndReturnError:
+  bool loadAndReturnError(ffi.Pointer<ffi.Pointer<objc.ObjCObject>> error) {
+    objc.checkOsVersionInternal('NSBundle.loadAndReturnError:',
+        iOS: (false, (2, 0, 0)), macOS: (false, (10, 5, 0)));
+    return _objc_msgSend_1dom33q(
+        this.ref.pointer, _sel_loadAndReturnError_, error);
+  }
+
+  /// bundleURL
+  objc.NSURL get bundleURL {
+    objc.checkOsVersionInternal('NSBundle.bundleURL',
+        iOS: (false, (4, 0, 0)), macOS: (false, (10, 6, 0)));
+    final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_bundleURL);
+    return objc.NSURL.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// resourceURL
+  objc.NSURL? get resourceURL {
+    objc.checkOsVersionInternal('NSBundle.resourceURL',
+        iOS: (false, (4, 0, 0)), macOS: (false, (10, 6, 0)));
+    final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_resourceURL);
+    return _ret.address == 0
+        ? null
+        : objc.NSURL.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// executableURL
+  objc.NSURL? get executableURL {
+    objc.checkOsVersionInternal('NSBundle.executableURL',
+        iOS: (false, (4, 0, 0)), macOS: (false, (10, 6, 0)));
+    final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_executableURL);
+    return _ret.address == 0
+        ? null
+        : objc.NSURL.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// URLForAuxiliaryExecutable:
+  objc.NSURL? URLForAuxiliaryExecutable(objc.NSString executableName) {
+    objc.checkOsVersionInternal('NSBundle.URLForAuxiliaryExecutable:',
+        iOS: (false, (4, 0, 0)), macOS: (false, (10, 6, 0)));
+    final _ret = _objc_msgSend_1sotr3r(this.ref.pointer,
+        _sel_URLForAuxiliaryExecutable_, executableName.ref.pointer);
+    return _ret.address == 0
+        ? null
+        : objc.NSURL.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// privateFrameworksURL
+  objc.NSURL? get privateFrameworksURL {
+    objc.checkOsVersionInternal('NSBundle.privateFrameworksURL',
+        iOS: (false, (4, 0, 0)), macOS: (false, (10, 6, 0)));
+    final _ret =
+        _objc_msgSend_151sglz(this.ref.pointer, _sel_privateFrameworksURL);
+    return _ret.address == 0
+        ? null
+        : objc.NSURL.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// sharedFrameworksURL
+  objc.NSURL? get sharedFrameworksURL {
+    objc.checkOsVersionInternal('NSBundle.sharedFrameworksURL',
+        iOS: (false, (4, 0, 0)), macOS: (false, (10, 6, 0)));
+    final _ret =
+        _objc_msgSend_151sglz(this.ref.pointer, _sel_sharedFrameworksURL);
+    return _ret.address == 0
+        ? null
+        : objc.NSURL.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// sharedSupportURL
+  objc.NSURL? get sharedSupportURL {
+    objc.checkOsVersionInternal('NSBundle.sharedSupportURL',
+        iOS: (false, (4, 0, 0)), macOS: (false, (10, 6, 0)));
+    final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_sharedSupportURL);
+    return _ret.address == 0
+        ? null
+        : objc.NSURL.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// builtInPlugInsURL
+  objc.NSURL? get builtInPlugInsURL {
+    objc.checkOsVersionInternal('NSBundle.builtInPlugInsURL',
+        iOS: (false, (4, 0, 0)), macOS: (false, (10, 6, 0)));
+    final _ret =
+        _objc_msgSend_151sglz(this.ref.pointer, _sel_builtInPlugInsURL);
+    return _ret.address == 0
+        ? null
+        : objc.NSURL.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// appStoreReceiptURL
+  objc.NSURL? get appStoreReceiptURL {
+    objc.checkOsVersionInternal('NSBundle.appStoreReceiptURL',
+        iOS: (false, (7, 0, 0)), macOS: (false, (10, 7, 0)));
+    final _ret =
+        _objc_msgSend_151sglz(this.ref.pointer, _sel_appStoreReceiptURL);
+    return _ret.address == 0
+        ? null
+        : objc.NSURL.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// bundlePath
+  objc.NSString get bundlePath {
+    final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_bundlePath);
+    return objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// resourcePath
+  objc.NSString? get resourcePath {
+    final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_resourcePath);
+    return _ret.address == 0
+        ? null
+        : objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// executablePath
+  objc.NSString? get executablePath {
+    final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_executablePath);
+    return _ret.address == 0
+        ? null
+        : objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// pathForAuxiliaryExecutable:
+  objc.NSString? pathForAuxiliaryExecutable(objc.NSString executableName) {
+    final _ret = _objc_msgSend_1sotr3r(this.ref.pointer,
+        _sel_pathForAuxiliaryExecutable_, executableName.ref.pointer);
+    return _ret.address == 0
+        ? null
+        : objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// privateFrameworksPath
+  objc.NSString? get privateFrameworksPath {
+    final _ret =
+        _objc_msgSend_151sglz(this.ref.pointer, _sel_privateFrameworksPath);
+    return _ret.address == 0
+        ? null
+        : objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// sharedFrameworksPath
+  objc.NSString? get sharedFrameworksPath {
+    final _ret =
+        _objc_msgSend_151sglz(this.ref.pointer, _sel_sharedFrameworksPath);
+    return _ret.address == 0
+        ? null
+        : objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// sharedSupportPath
+  objc.NSString? get sharedSupportPath {
+    final _ret =
+        _objc_msgSend_151sglz(this.ref.pointer, _sel_sharedSupportPath);
+    return _ret.address == 0
+        ? null
+        : objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// builtInPlugInsPath
+  objc.NSString? get builtInPlugInsPath {
+    final _ret =
+        _objc_msgSend_151sglz(this.ref.pointer, _sel_builtInPlugInsPath);
+    return _ret.address == 0
+        ? null
+        : objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// URLForResource:withExtension:subdirectory:inBundleWithURL:
+  static objc.NSURL? URLForResource(objc.NSString? name,
+      {objc.NSString? withExtension,
+      objc.NSString? subdirectory,
+      required objc.NSURL inBundleWithURL}) {
+    objc.checkOsVersionInternal(
+        'NSBundle.URLForResource:withExtension:subdirectory:inBundleWithURL:',
+        iOS: (false, (4, 0, 0)),
+        macOS: (false, (10, 6, 0)));
+    final _ret = _objc_msgSend_s92gih(
+        _class_NSBundle,
+        _sel_URLForResource_withExtension_subdirectory_inBundleWithURL_,
+        name?.ref.pointer ?? ffi.nullptr,
+        withExtension?.ref.pointer ?? ffi.nullptr,
+        subdirectory?.ref.pointer ?? ffi.nullptr,
+        inBundleWithURL.ref.pointer);
+    return _ret.address == 0
+        ? null
+        : objc.NSURL.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// URLsForResourcesWithExtension:subdirectory:inBundleWithURL:
+  static objc.NSArray? URLsForResourcesWithExtension(objc.NSString? ext,
+      {objc.NSString? subdirectory, required objc.NSURL inBundleWithURL}) {
+    objc.checkOsVersionInternal(
+        'NSBundle.URLsForResourcesWithExtension:subdirectory:inBundleWithURL:',
+        iOS: (false, (4, 0, 0)),
+        macOS: (false, (10, 6, 0)));
+    final _ret = _objc_msgSend_11spmsz(
+        _class_NSBundle,
+        _sel_URLsForResourcesWithExtension_subdirectory_inBundleWithURL_,
+        ext?.ref.pointer ?? ffi.nullptr,
+        subdirectory?.ref.pointer ?? ffi.nullptr,
+        inBundleWithURL.ref.pointer);
+    return _ret.address == 0
+        ? null
+        : objc.NSArray.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// URLForResource:withExtension:
+  objc.NSURL? URLForResource$1(objc.NSString? name,
+      {objc.NSString? withExtension}) {
+    objc.checkOsVersionInternal('NSBundle.URLForResource:withExtension:',
+        iOS: (false, (4, 0, 0)), macOS: (false, (10, 6, 0)));
+    final _ret = _objc_msgSend_15qeuct(
+        this.ref.pointer,
+        _sel_URLForResource_withExtension_,
+        name?.ref.pointer ?? ffi.nullptr,
+        withExtension?.ref.pointer ?? ffi.nullptr);
+    return _ret.address == 0
+        ? null
+        : objc.NSURL.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// URLForResource:withExtension:subdirectory:
+  objc.NSURL? URLForResource$2(objc.NSString? name,
+      {objc.NSString? withExtension, objc.NSString? subdirectory}) {
+    objc.checkOsVersionInternal(
+        'NSBundle.URLForResource:withExtension:subdirectory:',
+        iOS: (false, (4, 0, 0)),
+        macOS: (false, (10, 6, 0)));
+    final _ret = _objc_msgSend_11spmsz(
+        this.ref.pointer,
+        _sel_URLForResource_withExtension_subdirectory_,
+        name?.ref.pointer ?? ffi.nullptr,
+        withExtension?.ref.pointer ?? ffi.nullptr,
+        subdirectory?.ref.pointer ?? ffi.nullptr);
+    return _ret.address == 0
+        ? null
+        : objc.NSURL.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// URLForResource:withExtension:subdirectory:localization:
+  objc.NSURL? URLForResource$3(objc.NSString? name,
+      {objc.NSString? withExtension,
+      objc.NSString? subdirectory,
+      objc.NSString? localization}) {
+    objc.checkOsVersionInternal(
+        'NSBundle.URLForResource:withExtension:subdirectory:localization:',
+        iOS: (false, (4, 0, 0)),
+        macOS: (false, (10, 6, 0)));
+    final _ret = _objc_msgSend_s92gih(
+        this.ref.pointer,
+        _sel_URLForResource_withExtension_subdirectory_localization_,
+        name?.ref.pointer ?? ffi.nullptr,
+        withExtension?.ref.pointer ?? ffi.nullptr,
+        subdirectory?.ref.pointer ?? ffi.nullptr,
+        localization?.ref.pointer ?? ffi.nullptr);
+    return _ret.address == 0
+        ? null
+        : objc.NSURL.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// URLsForResourcesWithExtension:subdirectory:
+  objc.NSArray? URLsForResourcesWithExtension$1(objc.NSString? ext,
+      {objc.NSString? subdirectory}) {
+    objc.checkOsVersionInternal(
+        'NSBundle.URLsForResourcesWithExtension:subdirectory:',
+        iOS: (false, (4, 0, 0)),
+        macOS: (false, (10, 6, 0)));
+    final _ret = _objc_msgSend_15qeuct(
+        this.ref.pointer,
+        _sel_URLsForResourcesWithExtension_subdirectory_,
+        ext?.ref.pointer ?? ffi.nullptr,
+        subdirectory?.ref.pointer ?? ffi.nullptr);
+    return _ret.address == 0
+        ? null
+        : objc.NSArray.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// URLsForResourcesWithExtension:subdirectory:localization:
+  objc.NSArray? URLsForResourcesWithExtension$2(objc.NSString? ext,
+      {objc.NSString? subdirectory, objc.NSString? localization}) {
+    objc.checkOsVersionInternal(
+        'NSBundle.URLsForResourcesWithExtension:subdirectory:localization:',
+        iOS: (false, (4, 0, 0)),
+        macOS: (false, (10, 6, 0)));
+    final _ret = _objc_msgSend_11spmsz(
+        this.ref.pointer,
+        _sel_URLsForResourcesWithExtension_subdirectory_localization_,
+        ext?.ref.pointer ?? ffi.nullptr,
+        subdirectory?.ref.pointer ?? ffi.nullptr,
+        localization?.ref.pointer ?? ffi.nullptr);
+    return _ret.address == 0
+        ? null
+        : objc.NSArray.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// pathForResource:ofType:inDirectory:
+  static objc.NSString? pathForResource(objc.NSString? name,
+      {objc.NSString? ofType, required objc.NSString inDirectory}) {
+    final _ret = _objc_msgSend_11spmsz(
+        _class_NSBundle,
+        _sel_pathForResource_ofType_inDirectory_,
+        name?.ref.pointer ?? ffi.nullptr,
+        ofType?.ref.pointer ?? ffi.nullptr,
+        inDirectory.ref.pointer);
+    return _ret.address == 0
+        ? null
+        : objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// pathsForResourcesOfType:inDirectory:
+  static objc.NSArray pathsForResourcesOfType(objc.NSString? ext,
+      {required objc.NSString inDirectory}) {
+    final _ret = _objc_msgSend_15qeuct(
+        _class_NSBundle,
+        _sel_pathsForResourcesOfType_inDirectory_,
+        ext?.ref.pointer ?? ffi.nullptr,
+        inDirectory.ref.pointer);
+    return objc.NSArray.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// pathForResource:ofType:
+  objc.NSString? pathForResource$1(objc.NSString? name,
+      {objc.NSString? ofType}) {
+    final _ret = _objc_msgSend_15qeuct(
+        this.ref.pointer,
+        _sel_pathForResource_ofType_,
+        name?.ref.pointer ?? ffi.nullptr,
+        ofType?.ref.pointer ?? ffi.nullptr);
+    return _ret.address == 0
+        ? null
+        : objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// pathForResource:ofType:inDirectory:
+  objc.NSString? pathForResource$2(objc.NSString? name,
+      {objc.NSString? ofType, objc.NSString? inDirectory}) {
+    final _ret = _objc_msgSend_11spmsz(
+        this.ref.pointer,
+        _sel_pathForResource_ofType_inDirectory_,
+        name?.ref.pointer ?? ffi.nullptr,
+        ofType?.ref.pointer ?? ffi.nullptr,
+        inDirectory?.ref.pointer ?? ffi.nullptr);
+    return _ret.address == 0
+        ? null
+        : objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// pathForResource:ofType:inDirectory:forLocalization:
+  objc.NSString? pathForResource$3(objc.NSString? name,
+      {objc.NSString? ofType,
+      objc.NSString? inDirectory,
+      objc.NSString? forLocalization}) {
+    final _ret = _objc_msgSend_s92gih(
+        this.ref.pointer,
+        _sel_pathForResource_ofType_inDirectory_forLocalization_,
+        name?.ref.pointer ?? ffi.nullptr,
+        ofType?.ref.pointer ?? ffi.nullptr,
+        inDirectory?.ref.pointer ?? ffi.nullptr,
+        forLocalization?.ref.pointer ?? ffi.nullptr);
+    return _ret.address == 0
+        ? null
+        : objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// pathsForResourcesOfType:inDirectory:
+  objc.NSArray pathsForResourcesOfType$1(objc.NSString? ext,
+      {objc.NSString? inDirectory}) {
+    final _ret = _objc_msgSend_15qeuct(
+        this.ref.pointer,
+        _sel_pathsForResourcesOfType_inDirectory_,
+        ext?.ref.pointer ?? ffi.nullptr,
+        inDirectory?.ref.pointer ?? ffi.nullptr);
+    return objc.NSArray.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// pathsForResourcesOfType:inDirectory:forLocalization:
+  objc.NSArray pathsForResourcesOfType$2(objc.NSString? ext,
+      {objc.NSString? inDirectory, objc.NSString? forLocalization}) {
+    final _ret = _objc_msgSend_11spmsz(
+        this.ref.pointer,
+        _sel_pathsForResourcesOfType_inDirectory_forLocalization_,
+        ext?.ref.pointer ?? ffi.nullptr,
+        inDirectory?.ref.pointer ?? ffi.nullptr,
+        forLocalization?.ref.pointer ?? ffi.nullptr);
+    return objc.NSArray.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// localizedStringForKey:value:table:
+  objc.NSString localizedStringForKey(objc.NSString key,
+      {objc.NSString? value, objc.NSString? table}) {
+    final _ret = _objc_msgSend_11spmsz(
+        this.ref.pointer,
+        _sel_localizedStringForKey_value_table_,
+        key.ref.pointer,
+        value?.ref.pointer ?? ffi.nullptr,
+        table?.ref.pointer ?? ffi.nullptr);
+    return objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// localizedAttributedStringForKey:value:table:
+  NSAttributedString localizedAttributedStringForKey(objc.NSString key,
+      {objc.NSString? value, objc.NSString? table}) {
+    objc.checkOsVersionInternal(
+        'NSBundle.localizedAttributedStringForKey:value:table:',
+        iOS: (false, (15, 0, 0)),
+        macOS: (false, (12, 0, 0)));
+    final _ret = _objc_msgSend_11spmsz(
+        this.ref.pointer,
+        _sel_localizedAttributedStringForKey_value_table_,
+        key.ref.pointer,
+        value?.ref.pointer ?? ffi.nullptr,
+        table?.ref.pointer ?? ffi.nullptr);
+    return NSAttributedString.castFromPointer(_ret,
+        retain: true, release: true);
+  }
+
+  /// bundleIdentifier
+  objc.NSString? get bundleIdentifier {
+    final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_bundleIdentifier);
+    return _ret.address == 0
+        ? null
+        : objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// infoDictionary
+  objc.NSDictionary? get infoDictionary {
+    final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_infoDictionary);
+    return _ret.address == 0
+        ? null
+        : objc.NSDictionary.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// localizedInfoDictionary
+  objc.NSDictionary? get localizedInfoDictionary {
+    final _ret =
+        _objc_msgSend_151sglz(this.ref.pointer, _sel_localizedInfoDictionary);
+    return _ret.address == 0
+        ? null
+        : objc.NSDictionary.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// objectForInfoDictionaryKey:
+  objc.ObjCObjectBase? objectForInfoDictionaryKey(objc.NSString key) {
+    final _ret = _objc_msgSend_1sotr3r(
+        this.ref.pointer, _sel_objectForInfoDictionaryKey_, key.ref.pointer);
+    return _ret.address == 0
+        ? null
+        : objc.ObjCObjectBase(_ret, retain: true, release: true);
+  }
+
+  /// classNamed:
+  objc.ObjCObjectBase? classNamed(objc.NSString className) {
+    final _ret = _objc_msgSend_1sotr3r(
+        this.ref.pointer, _sel_classNamed_, className.ref.pointer);
+    return _ret.address == 0
+        ? null
+        : objc.ObjCObjectBase(_ret, retain: true, release: true);
+  }
+
+  /// principalClass
+  objc.ObjCObjectBase? get principalClass {
+    final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_principalClass);
+    return _ret.address == 0
+        ? null
+        : objc.ObjCObjectBase(_ret, retain: true, release: true);
+  }
+
+  /// preferredLocalizations
+  objc.NSArray get preferredLocalizations {
+    final _ret =
+        _objc_msgSend_151sglz(this.ref.pointer, _sel_preferredLocalizations);
+    return objc.NSArray.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// localizations
+  objc.NSArray get localizations {
+    final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_localizations);
+    return objc.NSArray.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// developmentLocalization
+  objc.NSString? get developmentLocalization {
+    final _ret =
+        _objc_msgSend_151sglz(this.ref.pointer, _sel_developmentLocalization);
+    return _ret.address == 0
+        ? null
+        : objc.NSString.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// preferredLocalizationsFromArray:
+  static objc.NSArray preferredLocalizationsFromArray(
+      objc.NSArray localizationsArray) {
+    final _ret = _objc_msgSend_1sotr3r(_class_NSBundle,
+        _sel_preferredLocalizationsFromArray_, localizationsArray.ref.pointer);
+    return objc.NSArray.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// preferredLocalizationsFromArray:forPreferences:
+  static objc.NSArray preferredLocalizationsFromArray$1(
+      objc.NSArray localizationsArray,
+      {objc.NSArray? forPreferences}) {
+    final _ret = _objc_msgSend_15qeuct(
+        _class_NSBundle,
+        _sel_preferredLocalizationsFromArray_forPreferences_,
+        localizationsArray.ref.pointer,
+        forPreferences?.ref.pointer ?? ffi.nullptr);
+    return objc.NSArray.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// executableArchitectures
+  objc.NSArray? get executableArchitectures {
+    objc.checkOsVersionInternal('NSBundle.executableArchitectures',
+        iOS: (false, (2, 0, 0)), macOS: (false, (10, 5, 0)));
+    final _ret =
+        _objc_msgSend_151sglz(this.ref.pointer, _sel_executableArchitectures);
+    return _ret.address == 0
+        ? null
+        : objc.NSArray.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// init
+  NSBundle init() {
+    objc.checkOsVersionInternal('NSBundle.init',
+        iOS: (false, (2, 0, 0)), macOS: (false, (10, 0, 0)));
+    final _ret =
+        _objc_msgSend_151sglz(this.ref.retainAndReturnPointer(), _sel_init);
+    return NSBundle.castFromPointer(_ret, retain: false, release: true);
+  }
+
+  /// new
+  static NSBundle new$() {
+    final _ret = _objc_msgSend_151sglz(_class_NSBundle, _sel_new);
+    return NSBundle.castFromPointer(_ret, retain: false, release: true);
+  }
+
+  /// allocWithZone:
+  static NSBundle allocWithZone(ffi.Pointer<objc.NSZone> zone) {
+    final _ret =
+        _objc_msgSend_1cwp428(_class_NSBundle, _sel_allocWithZone_, zone);
+    return NSBundle.castFromPointer(_ret, retain: false, release: true);
+  }
+
+  /// alloc
+  static NSBundle alloc() {
+    final _ret = _objc_msgSend_151sglz(_class_NSBundle, _sel_alloc);
+    return NSBundle.castFromPointer(_ret, retain: false, release: true);
+  }
+
+  /// self
+  NSBundle self$1() {
+    final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_self);
+    return NSBundle.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// retain
+  NSBundle retain() {
+    final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_retain);
+    return NSBundle.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// autorelease
+  NSBundle autorelease() {
+    final _ret = _objc_msgSend_151sglz(this.ref.pointer, _sel_autorelease);
+    return NSBundle.castFromPointer(_ret, retain: true, release: true);
+  }
+
+  /// Returns a new instance of NSBundle constructed with the default `new` method.
+  factory NSBundle() => new$();
+}
+
+enum NSAttributedStringEnumerationOptions {
+  NSAttributedStringEnumerationReverse(2),
+  NSAttributedStringEnumerationLongestEffectiveRangeNotRequired(1048576);
+
+  final int value;
+  const NSAttributedStringEnumerationOptions(this.value);
+
+  static NSAttributedStringEnumerationOptions fromValue(int value) =>
+      switch (value) {
+        2 => NSAttributedStringEnumerationReverse,
+        1048576 =>
+          NSAttributedStringEnumerationLongestEffectiveRangeNotRequired,
+        _ => throw ArgumentError(
+            'Unknown value for NSAttributedStringEnumerationOptions: $value'),
+      };
+}
+
+enum NSAttributedStringMarkdownParsingFailurePolicy {
+  NSAttributedStringMarkdownParsingFailureReturnError(0),
+  NSAttributedStringMarkdownParsingFailureReturnPartiallyParsedIfPossible(1);
+
+  final int value;
+  const NSAttributedStringMarkdownParsingFailurePolicy(this.value);
+
+  static NSAttributedStringMarkdownParsingFailurePolicy fromValue(int value) =>
+      switch (value) {
+        0 => NSAttributedStringMarkdownParsingFailureReturnError,
+        1 =>
+          NSAttributedStringMarkdownParsingFailureReturnPartiallyParsedIfPossible,
+        _ => throw ArgumentError(
+            'Unknown value for NSAttributedStringMarkdownParsingFailurePolicy: $value'),
+      };
+}
+
+enum NSAttributedStringMarkdownInterpretedSyntax {
+  NSAttributedStringMarkdownInterpretedSyntaxFull(0),
+  NSAttributedStringMarkdownInterpretedSyntaxInlineOnly(1),
+  NSAttributedStringMarkdownInterpretedSyntaxInlineOnlyPreservingWhitespace(2);
+
+  final int value;
+  const NSAttributedStringMarkdownInterpretedSyntax(this.value);
+
+  static NSAttributedStringMarkdownInterpretedSyntax fromValue(int value) =>
+      switch (value) {
+        0 => NSAttributedStringMarkdownInterpretedSyntaxFull,
+        1 => NSAttributedStringMarkdownInterpretedSyntaxInlineOnly,
+        2 =>
+          NSAttributedStringMarkdownInterpretedSyntaxInlineOnlyPreservingWhitespace,
+        _ => throw ArgumentError(
+            'Unknown value for NSAttributedStringMarkdownInterpretedSyntax: $value'),
+      };
+}
+
+enum NSAttributedStringFormattingOptions {
+  NSAttributedStringFormattingInsertArgumentAttributesWithoutMerging(1),
+  NSAttributedStringFormattingApplyReplacementIndexAttribute(2);
+
+  final int value;
+  const NSAttributedStringFormattingOptions(this.value);
+
+  static NSAttributedStringFormattingOptions fromValue(int value) =>
+      switch (value) {
+        1 => NSAttributedStringFormattingInsertArgumentAttributesWithoutMerging,
+        2 => NSAttributedStringFormattingApplyReplacementIndexAttribute,
+        _ => throw ArgumentError(
+            'Unknown value for NSAttributedStringFormattingOptions: $value'),
+      };
+}
+
 final class AudioStreamBasicDescription extends ffi.Struct {
   @ffi.Double()
   external double mSampleRate;
@@ -222,19 +1369,6 @@ class AVAudioFormat extends objc.NSObject implements objc.NSSecureCoding {
 }
 
 late final _class_AVAudioPlayer = objc.getClass("AVAudioPlayer");
-late final _sel_isKindOfClass_ = objc.registerName("isKindOfClass:");
-final _objc_msgSend_19nvye5 = objc.msgSendPointer
-    .cast<
-        ffi.NativeFunction<
-            ffi.Bool Function(
-                ffi.Pointer<objc.ObjCObject>,
-                ffi.Pointer<objc.ObjCSelector>,
-                ffi.Pointer<objc.ObjCObject>)>>()
-    .asFunction<
-        bool Function(ffi.Pointer<objc.ObjCObject>,
-            ffi.Pointer<objc.ObjCSelector>, ffi.Pointer<objc.ObjCObject>)>();
-typedef instancetype = ffi.Pointer<objc.ObjCObject>;
-typedef Dartinstancetype = objc.ObjCObjectBase;
 late final _sel_initWithContentsOfURL_error_ =
     objc.registerName("initWithContentsOfURL:error:");
 final _objc_msgSend_1lhpu4m = objc.msgSendPointer
@@ -273,14 +1407,6 @@ final _objc_msgSend_1pnyuds = objc.msgSendPointer
 late final _sel_initWithData_fileTypeHint_error_ =
     objc.registerName("initWithData:fileTypeHint:error:");
 late final _sel_prepareToPlay = objc.registerName("prepareToPlay");
-final _objc_msgSend_91o635 = objc.msgSendPointer
-    .cast<
-        ffi.NativeFunction<
-            ffi.Bool Function(ffi.Pointer<objc.ObjCObject>,
-                ffi.Pointer<objc.ObjCSelector>)>>()
-    .asFunction<
-        bool Function(
-            ffi.Pointer<objc.ObjCObject>, ffi.Pointer<objc.ObjCSelector>)>();
 late final _sel_play = objc.registerName("play");
 late final _sel_playAtTime_ = objc.registerName("playAtTime:");
 final _objc_msgSend_18chyc = objc.msgSendPointer
@@ -329,14 +1455,6 @@ final _objc_msgSend_1ukqyt8Fpret = objc.msgSendFpretPointer
         double Function(
             ffi.Pointer<objc.ObjCObject>, ffi.Pointer<objc.ObjCSelector>)>();
 late final _sel_currentDevice = objc.registerName("currentDevice");
-final _objc_msgSend_151sglz = objc.msgSendPointer
-    .cast<
-        ffi.NativeFunction<
-            ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCObject>,
-                ffi.Pointer<objc.ObjCSelector>)>>()
-    .asFunction<
-        ffi.Pointer<objc.ObjCObject> Function(
-            ffi.Pointer<objc.ObjCObject>, ffi.Pointer<objc.ObjCSelector>)>();
 late final _sel_setCurrentDevice_ = objc.registerName("setCurrentDevice:");
 final _objc_msgSend_xtuoz7 = objc.msgSendPointer
     .cast<
@@ -480,121 +1598,6 @@ late final _sel_averagePowerForChannel_ =
 late final _sel_channelAssignments = objc.registerName("channelAssignments");
 late final _sel_setChannelAssignments_ =
     objc.registerName("setChannelAssignments:");
-late final _sel_init = objc.registerName("init");
-late final _sel_new = objc.registerName("new");
-late final _sel_allocWithZone_ = objc.registerName("allocWithZone:");
-final _objc_msgSend_1cwp428 = objc.msgSendPointer
-    .cast<
-        ffi.NativeFunction<
-            ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCObject>,
-                ffi.Pointer<objc.ObjCSelector>, ffi.Pointer<objc.NSZone>)>>()
-    .asFunction<
-        ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<objc.ObjCObject>,
-            ffi.Pointer<objc.ObjCSelector>, ffi.Pointer<objc.NSZone>)>();
-late final _sel_alloc = objc.registerName("alloc");
-late final _sel_self = objc.registerName("self");
-ffi.Pointer<objc.ObjCObject> _ObjCBlock_objcObjCObject_ffiVoid_fnPtrTrampoline(
-        ffi.Pointer<objc.ObjCBlockImpl> block, ffi.Pointer<ffi.Void> arg0) =>
-    block.ref.target
-        .cast<
-            ffi.NativeFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<ffi.Void> arg0)>>()
-        .asFunction<
-            ffi.Pointer<objc.ObjCObject> Function(
-                ffi.Pointer<ffi.Void>)>()(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_objcObjCObject_ffiVoid_fnPtrCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_objcObjCObject_ffiVoid_fnPtrTrampoline)
-        .cast();
-ffi.Pointer<objc.ObjCObject>
-    _ObjCBlock_objcObjCObject_ffiVoid_closureTrampoline(
-            ffi.Pointer<objc.ObjCBlockImpl> block,
-            ffi.Pointer<ffi.Void> arg0) =>
-        (objc.getBlockClosure(block) as ffi.Pointer<objc.ObjCObject> Function(
-            ffi.Pointer<ffi.Void>))(arg0);
-ffi.Pointer<ffi.Void> _ObjCBlock_objcObjCObject_ffiVoid_closureCallable =
-    ffi.Pointer.fromFunction<
-                ffi.Pointer<objc.ObjCObject> Function(
-                    ffi.Pointer<objc.ObjCBlockImpl>, ffi.Pointer<ffi.Void>)>(
-            _ObjCBlock_objcObjCObject_ffiVoid_closureTrampoline)
-        .cast();
-
-/// Construction methods for `objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>`.
-abstract final class ObjCBlock_objcObjCObject_ffiVoid {
-  /// Returns a block that wraps the given raw block pointer.
-  static objc
-      .ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>
-      castFromPointer(ffi.Pointer<objc.ObjCBlockImpl> pointer,
-              {bool retain = false, bool release = false}) =>
-          objc.ObjCBlock<
-                  ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>(
-              pointer,
-              retain: retain,
-              release: release);
-
-  /// Creates a block from a C function pointer.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  static objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>
-      fromFunctionPointer(
-              ffi.Pointer<
-                      ffi.NativeFunction<
-                          ffi.Pointer<objc.ObjCObject> Function(
-                              ffi.Pointer<ffi.Void> arg0)>>
-                  ptr) =>
-          objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>(
-              objc.newPointerBlock(_ObjCBlock_objcObjCObject_ffiVoid_fnPtrCallable, ptr.cast()),
-              retain: false,
-              release: true);
-
-  /// Creates a block from a Dart function.
-  ///
-  /// This block must be invoked by native code running on the same thread as
-  /// the isolate that registered it. Invoking the block on the wrong thread
-  /// will result in a crash.
-  ///
-  /// If `keepIsolateAlive` is true, this block will keep this isolate alive
-  /// until it is garbage collected by both Dart and ObjC.
-  static objc
-      .ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>
-      fromFunction(objc.ObjCObjectBase Function(ffi.Pointer<ffi.Void>) fn,
-              {bool keepIsolateAlive = true}) =>
-          objc.ObjCBlock<
-                  ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>(
-              objc.newClosureBlock(
-                  _ObjCBlock_objcObjCObject_ffiVoid_closureCallable,
-                  (ffi.Pointer<ffi.Void> arg0) =>
-                      fn(arg0).ref.retainAndAutorelease(),
-                  keepIsolateAlive),
-              retain: false,
-              release: true);
-}
-
-/// Call operator for `objc.ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)>`.
-extension ObjCBlock_objcObjCObject_ffiVoid_CallExtension on objc
-    .ObjCBlock<ffi.Pointer<objc.ObjCObject> Function(ffi.Pointer<ffi.Void>)> {
-  objc.ObjCObjectBase call(ffi.Pointer<ffi.Void> arg0) => objc.ObjCObjectBase(
-      ref.pointer.ref.invoke
-          .cast<
-              ffi.NativeFunction<
-                  ffi.Pointer<objc.ObjCObject> Function(
-                      ffi.Pointer<objc.ObjCBlockImpl> block,
-                      ffi.Pointer<ffi.Void> arg0)>>()
-          .asFunction<
-              ffi.Pointer<objc.ObjCObject> Function(
-                  ffi.Pointer<objc.ObjCBlockImpl>,
-                  ffi.Pointer<ffi.Void>)>()(ref.pointer, arg0),
-      retain: true,
-      release: true);
-}
-
-late final _sel_retain = objc.registerName("retain");
-late final _sel_autorelease = objc.registerName("autorelease");
 
 /// AVAudioPlayer
 class AVAudioPlayer extends objc.NSObject {
