@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 
 const _avfAudioDylibPath =
     '/System/Library/Frameworks/AVFAudio.framework/Versions/Current/AVFAudio';
-const _foundationDylibPath =
-    '/System/Library/Frameworks/Foundation.framework/Foundation';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
