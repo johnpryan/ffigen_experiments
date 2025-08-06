@@ -21,25 +21,27 @@ void main() async {
   if (player == null) {
     throw ('AVAudioPlayer failed to initialize');
   }
-  final durationSeconds = player.duration.ceil();
-  print('$durationSeconds sec');
-  final status = player.play();
-  if (status) {
-    print('Playing...');
-    await Future<void>.delayed(Duration(seconds: durationSeconds));
-  } else {
-    print('Failed to play audio.');
-  }
-  runApp(const MainApp());
+  runApp(MainApp(player: player,));
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  final AVAudioPlayer player;
+
+  const MainApp({super.key, required this.player});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(body: Center(child: Text('Hello World!'))),
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: TextButton(
+            onPressed: () {
+              player.play();
+            },
+            child: Text('Play'),
+          ),
+        ),
+      ),
     );
   }
 }
