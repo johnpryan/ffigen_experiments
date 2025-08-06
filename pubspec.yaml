@@ -36,7 +36,6 @@ ffigen:
   headers:
     entry-points:
       - '/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/AVFAudio.framework/Headers/AVAudioPlayer.h'
-      - '/System/Library/Frameworks/Foundation.framework'
   preamble: |
     // Copyright (c) 2024, the Dart project authors. Please see the AUTHORS file
     // for details. All rights reserved. Use of this source code is governed by a
