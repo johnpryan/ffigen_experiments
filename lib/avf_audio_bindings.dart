@@ -272,6 +272,8 @@ class NSAttributedString extends objc.NSObject
 
 late final _sel_localizedAttributedStringForKey_value_table_ =
     objc.registerName("localizedAttributedStringForKey:value:table:");
+late final _sel_localizedStringForKey_value_table_localizations_ =
+    objc.registerName("localizedStringForKey:value:table:localizations:");
 late final _sel_bundleIdentifier = objc.registerName("bundleIdentifier");
 late final _sel_infoDictionary = objc.registerName("infoDictionary");
 late final _sel_localizedInfoDictionary =
@@ -941,6 +943,25 @@ class NSBundle extends objc.NSObject {
         table?.ref.pointer ?? ffi.nullptr);
     return NSAttributedString.castFromPointer(_ret,
         retain: true, release: true);
+  }
+
+  /// localizedStringForKey:value:table:localizations:
+  objc.NSString localizedStringForKey$1(objc.NSString key,
+      {objc.NSString? value,
+      objc.NSString? table,
+      required objc.NSArray localizations}) {
+    objc.checkOsVersionInternal(
+        'NSBundle.localizedStringForKey:value:table:localizations:',
+        iOS: (false, (18, 4, 0)),
+        macOS: (false, (15, 4, 0)));
+    final _ret = _objc_msgSend_s92gih(
+        this.ref.pointer,
+        _sel_localizedStringForKey_value_table_localizations_,
+        key.ref.pointer,
+        value?.ref.pointer ?? ffi.nullptr,
+        table?.ref.pointer ?? ffi.nullptr,
+        localizations.ref.pointer);
+    return objc.NSString.castFromPointer(_ret, retain: true, release: true);
   }
 
   /// bundleIdentifier

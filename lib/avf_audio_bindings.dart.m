@@ -2,7 +2,6 @@
 #import <Foundation/Foundation.h>
 #import <objc/message.h>
 #import <AVFAudio/AVAudioPlayer.h>
-#import "../../../../../../System/Library/Frameworks/Foundation.framework"
 
 #if !__has_feature(objc_arc)
 #error "This file must be compiled with ARC enabled"
