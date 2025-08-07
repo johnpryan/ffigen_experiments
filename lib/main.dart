@@ -5,14 +5,16 @@ import 'package:objective_c/objective_c.dart';
 
 import 'package:flutter/material.dart';
 
-const _avfAudioDylibPath =
-    '/System/Library/Frameworks/AVFAudio.framework/Versions/Current/AVFAudio';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   var fileData = await loadAsset('assets/test.mp3');
   var uint8Data = fileData.buffer.asUint8List();
-  DynamicLibrary.open(_avfAudioDylibPath);
+
+  // Use .executable() to look for the AVFAudio library in the app's process
+  // space.
+  //
+  // This works for AVFAudio on macOS and iOS.
+  DynamicLibrary.executable();
 
   final player = AVAudioPlayer.alloc().initWithData(
     uint8Data.toNSData(),
